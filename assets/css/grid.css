@@ -1,0 +1,27 @@
+.grid {
+	display: flex;
+}
+.grid .col {
+	flex: 1;
+}
+.grid-2 {
+	display: flex;
+	justify-content: space-between;
+}
+.grid-2 .col {
+	width: calc(50% - 30px);
+}
+
+@media screen and (max-width: 768px) {
+	.grid,
+	.grid-2 {
+		display: block;
+	}
+	.grid-2 .col {
+		width: 100%;
+	}
+}
+
+.-u-bottom-space-20 {
+    margin-bottom: 20px;
+}

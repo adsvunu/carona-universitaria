@@ -1,0 +1,341 @@
+.buttonGroup {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-direction: column;
+}
+.buttonGroup .button {
+    flex: 1;
+    flex-shrink: 0;
+}
+.flexible-space {
+    flex: 1 1;
+    display: none;
+}
+
+.buttonGroup .button:not(:last-of-type) {
+    margin-bottom: 15px
+}
+
+.button {
+    background-color: #E0E0E0;
+    color: #2E2E2E;
+    font-size: 20px;
+    padding: 0 40px;
+    line-height: 35px;
+    border-radius: 20px;
+    border: none;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, .16);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: lighter;
+    transition: all .2s;
+    outline: none;
+}
+.button:hover {
+    transform: translateY(-5%);
+    box-shadow: 0 5px 5px rgba(0, 0, 0, .16);
+}
+.button:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, .16);
+}
+
+.button.-primary {
+    background-color: #FFD912;
+    color: #2E2E2E;
+}
+.button.-secondary {
+    background-color: #115173;
+    color: #EFEFEF;
+}
+
+.link {
+    text-decoration: none;
+    color: #115173;
+    cursor: pointer;
+}
+
+.field {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    margin-bottom: 5px;
+}
+.label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-left: 15px;
+    font-family: 'Montserrat', sans-serif;
+    color: #606060;
+    font-size: 14px;
+    transform: translateY(100%);
+    visibility: hidden;
+    transition: all .2s;
+}
+.input {
+    caret-color: #FFD912;
+    color: #4A4A4A;
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+    border: solid 1px #E0E0E0;
+    border-radius: 20px;
+    outline: none;
+    padding: 6px 15px;
+    margin-top: 18px;
+    z-index: 1;
+}
+.input:focus {
+    border-color: #4A4A4A;
+}
+.input:focus::placeholder {
+    color: transparent;
+}
+.input:focus ~ .label {
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.input:disabled {
+    border-color: #FF2C2C;
+}
+.input:disabled::placeholder {
+    color: #FF2C2C;
+    cursor: not-allowed;
+}
+
+.checkboxField {
+    display: flex;
+    position: relative;
+    margin-top: 18px;
+    flex-direction: column;
+}
+.checkbox {
+    user-select: none;
+    display: block;
+}
+.checkbox span {
+    display: flex;
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+    align-items: center;
+    margin-bottom: 5px;
+}
+.checkbox input {
+    display: none;
+}
+.checkbox input ~ span::before {
+    content: "";
+    display: block;
+    position: relative;
+    width: 26px;
+    height: 24px;
+    background-image: url("../img/sprite.svg");
+    margin-right: 5px;
+}
+.checkbox input:checked ~ span::before {
+    background-position: 0 -24px;
+}
+.checkbox input:not(:checked) ~ span::before {
+    background-position: 0 0;
+}
+
+.link {
+    font-size: 14px;
+}
+
+.userCard {
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, .16);
+    box-sizing: border-box;
+    padding: 10px;
+    margin: 0 10px 20px 0;
+    cursor: pointer;
+}
+.userCard > * {
+    pointer-events: none;
+}
+.userCard-image {
+    display: block;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 20px;
+    flex-shrink: 0;
+}
+.userCard-info {
+    flex: 1 1;
+}
+.userCard-name {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: normal;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.userCard-details {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: normal;
+    font-size: 15px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    background-color: #F9F9F9;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+    padding-top: 90px;
+    box-sizing: border-box;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, .16);
+    z-index: 100;
+}
+.modal.is-visible {
+    display: initial;
+}
+
+.backdrop {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .5);
+    z-index: 50;
+}
+.backdrop.is-visible {
+    display: initial;
+}
+
+.mapContainer.-small {
+    position: relative;
+    display: block;
+    border-radius: 8px;
+    overflow: hidden;
+    padding-bottom: 100%;
+}
+.mapContainer.-small .map {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+@media screen and (min-width: 768px) {
+    .userCard {
+        width: calc(50% - 20px);
+    }
+
+    .flexible-space {
+        display: initial;
+    }
+
+    .modal {
+        align-items: center;
+        flex: 1;
+        padding: 30px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 760px;
+        height: 350px;
+        border-radius: 8px;
+    }
+
+    .mapContainer.-small {
+        width: 100%;
+        height: 100%;
+        padding-bottom: 0;
+    }
+    
+    .buttonGroup {
+        flex-direction: row;
+    }
+
+    .buttonGroup .button:not(:last-of-type) {
+        margin-bottom: 0;
+    }
+}
+@media screen and (min-width: 1200px) {
+    .userCard {
+        width: calc(33.3% - 20px);
+    }
+}
+@media screen and (min-width: 1400px) {
+    .userCard {
+        width: calc(25% - 20px);
+    }
+}
+
+.userInfo {
+    display: flex;
+}
+.userInfo-description {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.loadingBox {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+    width: 100%;
+    height: 50px;
+    flex-direction: column;
+    max-width: 800px;
+    width: 90%;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, .16);
+    border-radius: 8px 8px 0 0;
+    box-sizing: border-box;
+    padding: 12px;
+}
+.loadingBox.is-visible {
+    display: block;
+}
+.loadingBox-text {
+    font-size: 22px;
+    font-family: "Montserrat";
+    margin-bottom: 12px;
+    padding: 12px;
+}
+
+.loader {
+    height: 6px;
+    width: 100%;
+    position: fixed;
+    overflow: hidden;
+    background-color: #ddd;
+    bottom: 0;
+    left: 0;
+}
+.loader:before{
+    display: block;
+    position: absolute;
+    content: "";
+    left: -200px;
+    width: 200px;
+    height: 6px;
+    background-color: #FFD912;
+    animation: loading 2s linear infinite;
+}
+
+@keyframes loading {
+    from {left: -200px; width: 30%;}
+    50% {width: 30%;}
+    70% {width: 70%;}
+    80% { left: 50%;}
+    95% {left: 120%;}
+    to {left: 100%;}
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<title>Início</title>
+	<meta name="viewport" content="initial-scale=1.0">
+	<meta charset="utf-8">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="/assets/css/reset.css">
+	<link rel="stylesheet" href="/assets/css/components.css">
+    <link rel="stylesheet" href="/assets/css/layout.css">
+    <link rel="stylesheet" href="/assets/css/grid.css">
+	<link rel="stylesheet" href="/assets/css/sections/map.css">
+	<link rel="stylesheet" href="/assets/css/sections/caroneiro.css">
+	
+	<script src="/reload/reload.js"></script>
+</head>
+
+<body>
+	<main>
+		<div>
+			<nav class="navbar">
+				<input type="checkbox" class="navbar-checkbox" id="navbar-checkbox">
+				<label for="navbar-checkbox" class="navbar-hamburger">
+					<span class="navbar-icon"></span>
+				</label>
+				<ul class="navbar-list">
+					<li class="navbar-list-item"><a href="./inicio">Início</a></li>
+					<li class="navbar-list-item"><a href="./meuPerfil">Meu perfil</a></li>
+					<li class="navbar-list-item"><a href="/">Sair</a></li>
+				</ul>
+			</nav>
+			<span id="info"></span>
+			<div id="map" class="map"></div>
+			<div class="searchBox">
+				<input class="searchBox-input -pickup" type="search" id="-pickup" placeholder="Minha localização">
+				<input class="searchBox-input -destination" type="search" id="-destination" placeholder="Para onde você deseja ir?" >
+				<div class="buttonGroup -search-buttons">
+					<button class="button -primary js-confirmSearch">Confirmar</button>
+					<span class="flexible-space"></span>
+                    <button class="button js-cancelSearch">Cancelar</button>
+				</div>
+			</div>
+
+			<div class="positionBox">
+				<span class="positionBox-text">Posicione o marcador em sua localização:</span>
+				<div class="buttonGroup -search-buttons">
+					<button class="button -primary js-confirmPosition">Confirmar</button>
+					<span class="flexible-space"></span>
+					<button class="button js-cancelPosition">Voltar</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="modal confirmModal">
+			<span class="confirmModal-text">Procurando motorista...</span>
+			<div class="buttonGroup -search-buttons">
+				<span class="flexible-space"></span>
+				<button class="button -primary js-okConfirm">Ok</button>
+				<span class="flexible-space"></span>
+			</div>
+		</div>
+	</main>
+
+	<i class="backdrop"></i>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZmU2kIucbxFBUXpC7cZxAyRH-NqjKsgM&callback=initMap" async defer></script>
+	<script src="/assets/js/map.js"></script>
+	<script src="/assets/js/loading_box.js"></script>
+	<script src="/assets/js/map_methods.js"></script>
+	<script src="../socket.io/socket.io.js"></script>
+	<script src="/assets/js/caroneiro.js"></script>
+</body>
+
+</html>

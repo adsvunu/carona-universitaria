@@ -1,0 +1,88 @@
+.index-navbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 330px;
+}
+.index-navbar-ul {
+    display: flex;
+    justify-content: flex-end;
+    box-sizing: border-box;
+    padding: 20px;
+}
+.index-navbar-item {
+    display: block;
+}
+.index-navbar-item a {
+    display: block;
+}
+.index-navbar-flex {
+    flex: 1 1;
+}
+
+.index-top {
+    height: 100vh;
+    background-color: #115173;
+}
+.index-top-content {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.index-top-content h1 {
+    font-size: 50px;
+    color: #fff;
+    text-align: center;
+}
+.index-top-content h2 {
+    font-size: 25px;
+    color: #fff;
+    text-align: center;
+}
+
+.index-top-separator {
+    display: block;
+    height: 4px;
+    background-color: #fff;
+    margin: 10px 0;
+}
+
+.index-footer {
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+    color: #fff;
+}
+
+.loginBox, .signupBox {
+    width: auto;
+    height: auto;
+}
+
+.buttonGroup.-login {
+    margin-top: 24px;
+}
+
+.link.-index-link {
+    display: inline-block;
+    padding: 15px 5px 0;
+}
+
+@media screen and (max-width: 768px) {
+    .loginBox, .signupBox {
+        top: 50%;
+        left: 50%;
+        padding-top: 30px;
+        transform: translate(-50%, -50%);
+        border-radius: 8px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .loginBox, .signupBox {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 8px;
+    }
+}

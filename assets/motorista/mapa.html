@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<title>Início</title>
+	<meta name="viewport" content="initial-scale=1.0">
+	<meta charset="utf-8">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+	<link rel="stylesheet" href="/assets/css/reset.css">
+	<link rel="stylesheet" href="/assets/css/components.css">
+    <link rel="stylesheet" href="/assets/css/layout.css">
+    <link rel="stylesheet" href="/assets/css/grid.css">
+	<link rel="stylesheet" href="/assets/css/sections/map.css">
+</head>
+
+<body>
+	<main>
+		<div>
+			<nav class="navbar">
+				<input type="checkbox" class="navbar-checkbox" id="navbar-checkbox">
+				<label for="navbar-checkbox" class="navbar-hamburger">
+					&nbsp;
+				</label>
+				<ul class="navbar-list">
+					<li class="navbar-list-item"><a href="./inicio">Início</a></li>
+					<li class="navbar-list-item"><a href="./meuPerfil">Meu perfil</a></li>
+					<li class="navbar-list-item"><a href="#">Sair</a></li>
+				</ul>
+			</nav>
+			<span id="info"></span>
+			<div id="map" class="map"></div>
+		</div>
+	</main>
+    
+	<script src="/assets/js/map.js">
+	</script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_NMC2rASIDhRIqvCQz1m5dK-NhJjUYPM&callback=initMap"
+		async defer></script>
+</body>
+
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/reset.css">
+    <link rel="stylesheet" href="/assets/css/components.css">
+    <link rel="stylesheet" href="/assets/css/layout.css">
+    <link rel="stylesheet" href="/assets/css/grid.css">
+    <link rel="stylesheet" href="/assets/css/sections/map.css">
+    <link rel="stylesheet" href="/assets/css/sections/start.css">
+    
+	<script src="/reload/reload.js"></script> 
+    <title>Tela inicial</title>
+</head>
+<body class="wrapper" onload="loadPage()">
+    <main>
+        <div>
+            <nav class="navbar">
+                <input type="checkbox" class="navbar-checkbox" id="navbar-checkbox">
+				<label for="navbar-checkbox" class="navbar-hamburger">
+                    <span class="navbar-icon -dark"></span>
+                </label>
+                <ul class="navbar-list">
+                    <li class="navbar-list-item"><a href="./inicio">Início</a></li>
+                    <li class="navbar-list-item"><a href="./perfil">Meu perfil</a></li>
+                    <li class="navbar-list-item"><a href="/">Sair</a></li>
+                </ul>
+            </nav>
+            <section class="wrapper">
+                <div>
+                    <h1 class="start-title">Bem vindo, Samuel</h1>
+                    <h2 class="start-subtitle">Últimas solicitações:</h2>
+                </div>
+
+                <div>
+                    <div id="cardSolicitations"></div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+    <footer>
+    </footer>
+
+    <div class="modal">
+        <div class="grid-2">
+            <div class="col">
+                <div class="userInfo -u-bottom-space-20">
+                    <img class="userCard-image"
+                        src="https://articles-images.sftcdn.net/wp-content/uploads/sites/3/2016/01/wallpaper-for-facebook-profile-photo.jpg"
+                        alt="Foto">
+                    <div class="userCard-info">
+                        <h3 class="userCard-name">Lucas Gusmão</h3>
+                        <p class="userCard-details">Puc Minas - Liberdade, 18 anos, 14km</p>
+                    </div>
+                </div>
+                <div class="buttonGroup -u-bottom-space-20">
+                    <button class="button -primary js-accept">Aceitar</button>
+                    <span class="flexible-space"></span>
+                    <button class="button js-refuse">Recusar</button>
+                </div>
+                <div class="userInfo-description -u-bottom-space-20">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat explicabo unde sapiente quidem est ratione aliquid mollitia aspernatur. Corporis expedita a est at assumenda nemo quidem atque. Inventore, facilis vel.
+                </div>
+            </div>
+            <div class="col">
+                <div class="mapContainer -small">
+                <div id="map" class="map"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <i class="backdrop"></i>
+
+    <script src="/assets/js/db.js"></script>
+    <script src="/assets/js/motorista.js" defer></script>
+    <script src="/assets/js/map.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_NMC2rASIDhRIqvCQz1m5dK-NhJjUYPM&callback=initMap"
+    async defer></script>
+    
+	<script src="../socket.io/socket.io.js"></script>
+	<script>
+      var socket = io();
+      
+    document.querySelector(".js-accept").addEventListener("click", () => {
+        
+        socket.emit('accepted', db.dados.motorista[0]);
+    });
+	</script>
+</body>
+
+</html>

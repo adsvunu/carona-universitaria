@@ -1,0 +1,126 @@
+.navbar {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    z-index: 1000;
+}
+.navbar.is-locked {
+    position: fixed;
+}
+.navbar-checkbox {
+    display: none;
+}
+.navbar-hamburger {
+    display: block;
+    height: 48px;
+    width: 48px;
+    z-index: 50000;
+}
+.navbar-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.navbar-icon,
+.navbar-icon::before,
+.navbar-icon::after {
+    width: 3rem;
+    height: 4px;
+    background-color: #fff;
+    content: "";
+    display: inline-block;
+    transition: all .2s;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, .16);
+
+}
+
+.navbar-icon.-dark,
+.navbar-icon.-dark::before,
+.navbar-icon.-dark::after {
+    background-color: #000;
+
+}
+
+.navbar-icon::before,
+.navbar-icon::after {
+    position: absolute;
+    left: 0;
+}
+
+.navbar-icon::before {
+    top: -.8rem;
+}
+.navbar-icon::after {
+    top: .8rem;
+}
+
+.navbar-checkbox:checked ~ .navbar-list {
+    transform: translateX(0);
+}
+
+.navbar-checkbox:checked + .navbar-hamburger .navbar-icon {
+    background-color: transparent;
+    box-shadow: none;
+}
+.navbar-checkbox:checked + .navbar-hamburger .navbar-icon::before {
+    top: 0;
+    transform: rotate(135deg);
+    background-color: #000;
+}
+.navbar-checkbox:checked + .navbar-hamburger .navbar-icon::after {
+    top: 0;
+    transform: rotate(-135deg);
+    background-color: #000;
+}
+
+.navbar-list {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 300px;
+    padding-top: 90px;
+    background-color: #FFD912;
+    box-shadow: 3px 0 12px rgba(0, 0, 0, .16);
+    transform: translateX(-100%);
+    transition: transform .2s;
+    z-index: 10000;
+}
+.navbar-list-item {
+    list-style: none;
+    padding: 10px;
+    padding-left: 30px;
+}
+.navbar-list-item a {
+    text-decoration: none;
+    color: #000;
+    font-size: 30px;
+    font-family: 'Montserrat', sans-serif;
+}
+/* 
+@media screen and (min-width: 768px) {
+    .navbar-list {
+        display: flex;
+        padding: 0;
+    }
+    .navbar-list-item {
+        list-style: none;
+        padding: 0 15px;
+    }
+    .navbar-list-item a {
+        text-decoration: none;
+        color: #000;
+        font-size: 20px;
+        font-family: 'Montserrat', sans-serif;
+    }
+} */
+
+.wrapper {
+    margin-top: 120px;
+    margin-left: 10px;
+}

@@ -1,0 +1,16 @@
+image: node:latest
+
+stages:
+  - production
+  
+production:
+  type: deploy
+  stage: production
+  image: ruby:latest
+  script:
+    - apt-get update -qy
+    - apt-get install -y ruby-dev
+    - gem install dpl
+    - dpl --provider=heroku --app=carona-universitaria --api-key=63c1ac79-6932-447a-a9cd-68b35b5d2194
+  only:
+    - master

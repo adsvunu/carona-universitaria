@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/reset.css">
+    <link rel="stylesheet" href="/assets/css/components.css">
+    <link rel="stylesheet" href="/assets/css/layout.css">
+    <link rel="stylesheet" href="/assets/css/grid.css">
+    <link rel="stylesheet" href="/assets/css/sections/map.css">
+    <link rel="stylesheet" href="/assets/css/sections/start.css">
+    <script src="/reload/reload.js"></script>
+    <title>Tela inicial</title>
+</head>
+
+<body class="wrapper" onload="init()">
+    <main>
+        <div>
+            <section class="wrapper">
+                <div id="msg"></div>
+                <form id="formCadastro">
+                    
+                    <input type="text" id="nome" placeholder="Nome" required>
+                    <input type="text" id="email" placeholder="E-mail" required>
+                    <input type="password" id="senha" placeholder="Senha" required>
+                    <input type="text" id="faculdade" placeholder="Faculdade" required>
+                    <input type="number" id="idade" placeholder="Idade" required>
+                    <input type="text" id="descricao" placeholder="Descrição" required>
+                    Tipo de usuário:<br>
+                    Caroneiro<input type="radio" id="tipoUsuario" name="tipoUsuario" value="caroneiro">
+                    Motorista<input type="radio" id="tipoUsuario" name="tipoUsuario" value="motorista"><br>
+                    <input type="button" id="btnInsert" value="Inserir">
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <i class="backdrop"></i>
+
+    <script src="/assets/js/motorista.js" defer></script>
+    <script src="/assets/js/map.js"></script>
+
+    <script src="../socket.io/socket.io.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+    <script>
+        function init() {
+            // Adiciona funções para tratar os eventos 
+            $("#btnInsert").click(function () {
+                // Verfica se o formulário está preenchido corretamente
+                if (!$('#formCadastro')[0].checkValidity()) {
+                    displayMessage("Preencha o formulário corretamente.");
+                    return;
+                }
+
+                // Obtem os valores dos campos do formulário
+                let nome = $("#nome").val();
+                let email = $('#email').val();
+                let senha = $('#senha').val();
+                let faculdade = $("#faculdade").val();
+                let idade = $('#idade').val();
+                let descricao = $('#descricao').val();
+                let tipoUsuario = $('#tipoUsuario:checked').val();
+                let cadastro = { nome: nome, email: email, senha: senha, faculdade: faculdade, idade: idade, descricao: descricao};
+
+                insertCadastro(cadastro, tipoUsuario);
+
+                // Limpa o formulario
+                $("#formCadastro")[0].reset();
+            });
+
+            // Oculta a mensagem de aviso após alguns segundos
+            $('#msg').bind("DOMSubtreeModified", function () {
+                window.setTimeout(function () {
+                    $(".alert").fadeTo(500, 0).slideUp(500, function () {
+                        $(this).remove();
+                    });
+                }, 5000);
+            });
+
+        }
+    </script>
+</body>
+
+</html>

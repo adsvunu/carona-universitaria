@@ -1,0 +1,107 @@
+.searchBox {
+    display: none;
+    width: 90%;
+    max-width: 800px;
+    height: 50px;
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    box-sizing: border-box;
+    padding: 10px 20px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, .16);
+    border-radius: 8px 8px 0 0;
+    background-color: #fff;
+    transition: height .2s;
+    overflow: hidden;
+    z-index: 100;
+}
+.searchBox.is-open {
+    height: 160px;
+}
+.searchBox.is-visible {
+    display: block;
+}
+
+.searchBox .searchBox-input.-pickup {
+    display: none;
+}
+.searchBox .buttonGroup.-search-buttons {
+    display: none;
+}
+
+.searchBox.is-open .searchBox-input.-pickup {
+    display: initial;
+}
+.searchBox.is-open .buttonGroup.-search-buttons {
+    display: flex;
+}
+.searchBox.is-hidden {
+    display: none;
+}
+
+.searchBox-input {
+    font-size: 17px;
+    display: block;
+    width: 100%;
+    height: 30px;
+    border: none;
+    outline: none;
+    margin-bottom: 20px;
+}
+.searchBox-input.-pickup::placeholder {
+    color: #000;
+}
+
+.positionBox {
+    display: none;
+    width: 90%;
+    max-width: 800px;
+    position: fixed;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    box-sizing: border-box;
+    padding: 20px 20px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, .16);
+    border-radius: 8px 8px 0 0;
+    background-color: #fff;
+    transition: height .2s;
+    overflow: hidden;
+    z-index: 100;
+}
+.positionBox.is-open {
+    display: initial;
+}
+.positionBox-text {
+    display: block;
+    font-family: "Montserrat";
+    margin-bottom: 20px;
+}
+
+.confirmModal {
+    height: auto;
+}
+
+.confirmModal-text {
+    font-family: "Montserrat";
+    display: block;
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px
+}
+
+@media screen and (max-width: 768px) {
+    .searchBox.is-open {
+        height: 220px;
+    }
+
+    .confirmModal {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 90%;
+        padding-top: 40px;
+        border-radius: 8px;
+    }
+}

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="50" height="50" viewBox="0 0 50 50">
+  <defs>
+    <clipPath id="clip-custom_1">
+      <rect width="50" height="50"/>
+    </clipPath>
+  </defs>
+  <g id="custom_1" data-name="custom – 1" clip-path="url(#clip-custom_1)">
+    <g id="Rectangle_1" data-name="Rectangle 1" transform="translate(5 10)" stroke="#000" stroke-width="1">
+      <rect width="40" height="5" rx="2.5" stroke="none"/>
+      <rect x="0.5" y="0.5" width="39" height="4" rx="2" fill="none"/>
+    </g>
+    <g id="Rectangle_2" data-name="Rectangle 2" transform="translate(5 23)" stroke="#000" stroke-width="1">
+      <rect width="40" height="5" rx="2.5" stroke="none"/>
+      <rect x="0.5" y="0.5" width="39" height="4" rx="2" fill="none"/>
+    </g>
+    <g id="Rectangle_3" data-name="Rectangle 3" transform="translate(5 36)" stroke="#000" stroke-width="1">
+      <rect width="40" height="5" rx="2.5" stroke="none"/>
+      <rect x="0.5" y="0.5" width="39" height="4" rx="2" fill="none"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+	<link rel="stylesheet" href="/assets/css/reset.css">
+	<link rel="stylesheet" href="/assets/css/components.css">
+	<link rel="stylesheet" href="/assets/css/layout.css">
+	<link rel="stylesheet" href="/assets/css/grid.css">
+	<link rel="stylesheet" href="/assets/css/sections/map.css">
+	<link rel="stylesheet" href="/assets/css/sections/start.css">
+	<link rel="stylesheet" href="/assets/css/sections/profile.css">
+
+	<script src="/reload/reload.js"></script>
+	<title>Tela inicial</title>
+</head>
+
+<body class="wrapper" onload="loadPage()">
+	<main>
+		<div>
+			<nav class="navbar">
+				<input type="checkbox" class="navbar-checkbox" id="navbar-checkbox">
+				<label for="navbar-checkbox" class="navbar-hamburger">
+					<span class="navbar-icon -dark"></span>
+				</label>
+				<ul class="navbar-list">
+					<li class="navbar-list-item"><a href="./inicio">Início</a></li>
+					<li class="navbar-list-item"><a href="./perfil">Meu perfil</a></li>
+					<li class="navbar-list-item"><a href="#">Sair</a></li>
+				</ul>
+			</nav>
+			<section class="wrapper">
+				<h1 class="start-title">Perfil de Samuel</h1>
+				<form class="profile-form">
+					<input id="profile-picture" class="profile-picture-input" type="file">
+					<label for="profile-picture">
+						<img class="profile-picture" src="https://articles-images.sftcdn.net/wp-content/uploads/sites/3/2016/01/wallpaper-for-facebook-profile-photo.jpg">
+					</label>
+					<div class="field">
+						<input id="nome" type="text" class="input" placeholder="Nome">
+						<label for="nome" class="label">Nome</label>
+					</div>
+					<div class="field">
+						<input id="email" type="text" class="input" placeholder="E-mail">
+						<label for="email" class="label">E-mail</label>
+					</div>
+					<div class="field">
+						<input id="senha" type="password" class="input" placeholder="Senha">
+						<label for="senha" class="label">Senha</label>
+					</div>
+					<div class="field">
+						<input id="faculdade" type="text" class="input" placeholder="Faculdade">
+						<label for="faculdade" class="label">Faculdade</label>
+					</div>
+					<div class="field">
+						<input id="idade" type="text" class="input" placeholder="Idade">
+						<label for="idade" class="label">Idade</label>
+					</div>
+					<div class="field">
+						<input id="descricao" type="text" class="input" placeholder="Descrição">
+						<label for="descricao" class="label">Descrição</label>
+					</div>
+					<div class="profile-buttonField">
+						<button class="button -primary">Salvar</button>
+					</div>
+				</form>
+			</section>
+		</div>
+	</main>
+
+	<script src="/assets/js/session.js"></script>
+	<script src="/assets/js/profile.js"></script>
+	<script src="/assets/js/db.js"></script>
+</body>
+
+</html>
